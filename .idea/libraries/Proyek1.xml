@@ -1,0 +1,15 @@
+<component name="libraryTable">
+  <library name="Proyek1">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/groovy-2.5.6.jar!/" />
+      <root url="jar://$PROJECT_DIR$/jasperreports-6.8.0.jar!/" />
+      <root url="jar://$PROJECT_DIR$/commons-beanutils-1.8.0.jar!/" />
+      <root url="jar://$PROJECT_DIR$/org-apache-commons-logging.jar!/" />
+      <root url="jar://$PROJECT_DIR$/commons-collections4-4.1.wso2v1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/commons-collections-3.2.2.jar!/" />
+      <root url="jar://$PROJECT_DIR$/commons-digester-2.1.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

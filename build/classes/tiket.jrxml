@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.6.0.final using JasperReports Library version 6.6.0  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="ce2ea255-25be-4055-9900-328f20dfb1f7">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT idbooking, d.nama, m.nama_maskapai, kodekursi, kelas
+FROM data AS d RIGHT JOIN booking AS b ON d.iddata = b.iddata 
+LEFT JOIN maskapai AS m ON b.idmaskapai = m.idmaskapai 
+LEFT JOIN jadwal AS j ON m.idjadwal = j.idjadwal
+ORDER BY idbooking DESC]]>
+	</queryString>
+	<field name="idbooking" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="nama" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="nama_maskapai" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="kodekursi" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="kelas" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<group name="nama">
+		<groupExpression><![CDATA[$F{nama}]]></groupExpression>
+	</group>
+	<group name="nama_maskapai">
+		<groupExpression><![CDATA[$F{nama_maskapai}]]></groupExpression>
+	</group>
+	<group name="kodekursi">
+		<groupExpression><![CDATA[$F{kodekursi}]]></groupExpression>
+	</group>
+	<group name="kelas">
+		<groupExpression><![CDATA[$F{kelas}]]></groupExpression>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="141" splitType="Stretch">
+			<image>
+				<reportElement x="1" y="10" width="158" height="113" uuid="dcfcf247-1a7c-45af-8129-74a2b8f21bec"/>
+				<imageExpression><![CDATA["C:/Users/soyidwahyud/Pictures/proyek pesawat/11111.png"]]></imageExpression>
+			</image>
+			<line>
+				<reportElement x="0" y="8" width="555" height="1" uuid="2ff8509b-7276-4a81-9b7e-a0dca7edc1a5"/>
+			</line>
+			<staticText>
+				<reportElement x="80" y="40" width="424" height="35" uuid="f177d8ca-89d3-40e7-9da6-b1fe433c0d69"/>
+				<textElement textAlignment="Center">
+					<font size="26" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Tiket Boarding]]></text>
+			</staticText>
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="110" width="555" height="1" uuid="153260d1-9d06-4939-b2f5-00da798ce97c"/>
+			</line>
+			<staticText>
+				<reportElement x="200" y="-80" width="100" height="15" uuid="8483797c-7145-4051-9554-465027d43938"/>
+				<text><![CDATA[$F{idbooking}]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="0" y="111" width="555" height="27" forecolor="#FFFFFF" backcolor="#999999" uuid="7ac42aea-bbe8-4d95-bdab-5aa8e0d39de9"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[No Pemesanan]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="200" y="111" width="354" height="27" uuid="0d738ea5-6d2c-4e8a-8170-324c3f294f8f"/>
+				<textElement>
+					<font size="16" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{idbooking}]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="195" splitType="Stretch">
+			<textField>
+				<reportElement mode="Opaque" x="200" y="-8" width="355" height="27" forecolor="#FFFFFF" backcolor="#000000" uuid="0c9f0d57-1734-4580-8d8b-8eb7553f667e"/>
+				<textElement>
+					<font size="18" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{nama}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement mode="Opaque" x="0" y="-8" width="200" height="27" forecolor="#FFFFFF" backcolor="#000000" uuid="e47900d5-77f3-45f3-975d-4eaf1ebedeca"/>
+				<textElement>
+					<font size="18"/>
+				</textElement>
+				<text><![CDATA[Nama Penumpang]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="0" y="19" width="200" height="27" backcolor="#CCCCFF" uuid="f70a1305-db8a-4da4-83db-bcf6d9a2b310"/>
+				<textElement>
+					<font size="18"/>
+				</textElement>
+				<text><![CDATA[Maskapai penerbangan]]></text>
+			</staticText>
+			<textField>
+				<reportElement mode="Opaque" x="200" y="20" width="355" height="27" backcolor="#CCCCFF" uuid="5ae3292f-112c-4162-8a65-58677f2928c0"/>
+				<textElement>
+					<font size="18"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{nama_maskapai}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="47" width="200" height="27" uuid="c90b0f28-f3e8-4dce-8465-2471c1269fbb"/>
+				<textElement>
+					<font size="18"/>
+				</textElement>
+				<text><![CDATA[kode kursi]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="74" width="200" height="27" uuid="deabaa3a-0b93-4a34-b7b7-65fe504b2ded"/>
+				<textElement>
+					<font size="16" isBold="false"/>
+				</textElement>
+				<text><![CDATA[kelas]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="200" y="51" width="355" height="27" uuid="aaab1f8f-b648-4db4-a77e-75bac6db5e5e"/>
+				<textElement>
+					<font size="18"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{kodekursi}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="200" y="74" width="355" height="27" uuid="521a4e57-895c-495a-9a08-47a3e794c742"/>
+				<textElement>
+					<font size="16" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{kelas}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="105" width="555" height="1" uuid="21c39cc7-e519-4919-bcc0-1f70750b4ac3"/>
+			</line>
+			<textField pattern="" isBlankWhenNull="false">
+				<reportElement key="textField" x="12" y="111" width="209" height="19" forecolor="#000000" backcolor="#FFFFFF" uuid="f48a1523-80d3-4382-ac02-f81bb3ef1a96"/>
+				<box>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement>
+					<font size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new Date()]]></textFieldExpression>
+			</textField>
+			<textField pattern="" isBlankWhenNull="false">
+				<reportElement key="textField" x="360" y="111" width="170" height="19" forecolor="#000000" backcolor="#FFFFFF" uuid="2bc81edc-0711-41d2-b825-9c068a6d2ae2"/>
+				<box>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Right">
+					<font size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Page " + $V{PAGE_NUMBER} + " of "]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="130" width="555" height="1" uuid="31b94275-9486-4337-9019-ab2413bb926f"/>
+			</line>
+			<line direction="BottomUp">
+				<reportElement key="line" x="0" y="146" width="554" height="1" uuid="9e0c9bdd-97f6-4244-ab28-d8823e3a6165"/>
+			</line>
+			<staticText>
+				<reportElement x="12" y="148" width="270" height="30" uuid="27f636fa-0ece-4f6f-8bef-1c025705b69e"/>
+				<text><![CDATA[Terima kasih sudah menggunakan layanan kami]]></text>
+			</staticText>
+			<line direction="BottomUp">
+				<reportElement key="line" x="-2" y="165" width="554" height="1" uuid="e75429da-7978-44dd-a601-d227ad79651e"/>
+			</line>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="30" splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="25" splitType="Stretch">
+			<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.VerticalRowLayout"/>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="25" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="24" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="10" splitType="Stretch"/>
+	</summary>
+</jasperReport>
